@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Italo Saraiva Gonçalves</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg-dark: #0f172a;
+            --bg-section: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #22d3ee;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* CV Container */
+        .cv-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .cv-header {
+            text-align: center;
+            padding: 3rem 0;
+            background: var(--bg-section);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .cv-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cv-header .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        /* CV Sections */
+        .cv-section {
+            background: var(--bg-section);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .cv-section h2 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .cv-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Summary */
+        .summary {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            padding: 1.5rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 10px;
+            border-left: 3px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .experience-description ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .education-item:hover {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .education-degree {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .education-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: rgba(15, 23, 42, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            color: var(--text-secondary);
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Languages */
+        .language-item {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 25px;
+            margin: 0.5rem;
+            color: var(--text-primary);
+            transition: all 0.3s;
+        }
+
+        .language-item:hover {
+            background: rgba(34, 211, 238, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ITALO.DEV</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CV Container -->
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="cv-header">
+            <h1>Italo Saraiva Gonçalves</h1>
+            <p style="color: var(--text-secondary); font-size: 1.2rem;">Fullstack Developer & No-Code Expert</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <a href="mailto:italosaraiva182@gmail.com">italosaraiva182@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    📱 <a href="https://wa.me/5586999843969">+55 (86) 99984-3969</a>
+                </div>
+                <div class="contact-item">
+                    🔗 <a href="https://github.com/italoengdev" target="_blank">GitHub</a>
+                </div>
+                <div class="contact-item">
+                    💼 <a href="https://linkedin.com/in/italoengdev" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Button -->
+        <div class="download-section">
+            <button class="download-btn" onclick="alert('In a real implementation, this would download the PDF version of the CV')">
+                <span>📥</span>
+                <span>Download CV (PDF)</span>
+            </button>
+        </div>
+
+        <!-- Summary -->
+        <div class="cv-section">
+            <h2>Summary</h2>
+            <div class="summary">
+                Experienced fullstack developer with a strong focus on no-code and low-code solutions, particularly with Bubble.io. As a co-founder of Mení Digital, I have delivered complex projects, integrating APIs such as WhatsApp, Google Contacts, Stripe, and AI technologies like OpenAI and Leonardo AI. I have a proven track record in building and optimizing applications in Bubble.io for startups like Genial, WeFlow, and PetConnect, where I also leverage JavaScript for advanced customizations. My expertise includes MVP development, SaaS platforms, and innovation-driven solutions.
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="cv-section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Bubble.io Developer</div>
+                        <div class="experience-company">LowCode Agency</div>
+                    </div>
+                    <div class="experience-date">December 2024 - Present</div>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Expertise in project and task management with ClickUp for team collaboration</li>
+                        <li>Integration of third-party APIs to extend application functionality</li>
+                        <li>Implementation of advanced business logic for workflow automation</li>
+                        <li>Design and development of responsive user interfaces</li>
+                        <li>Performance optimization and debugging for software reliability</li>
+                        <li>Technical support and user training for smooth onboarding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Bubble.io Developer</div>
+                        <div class="experience-company">Pipple</div>
+                    </div>
+                    <div class="experience-date">February 2024 - December 2024</div>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Customized web software development using Bubble.io platform</li>
+                        <li>Experience with ClickUp Team Communication Tool</li>
+                        <li>Integration of external APIs to enhance functionality</li>
+                        <li>Implementation of complex business rules</li>
+                        <li>Creation of intuitive and responsive user interfaces</li>
+                        <li>Performance optimization and troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Developer in Web Development and No-Code</div>
+                        <div class="experience-company">Mení Digital (Co-Founder)</div>
+                    </div>
+                    <div class="experience-date">April 2023 - December 2024</div>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Development of screens, interfaces and database manipulation using Bubble.io and JavaScript</li>
+                        <li>Led complex integrations with WhatsApp, Google Contacts, Stripe APIs</li>
+                        <li>Implemented AI technologies including OpenAI and Leonardo AI</li>
+                        <li>Delivered SaaS solutions for multiple startup clients</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Intern Fullstack Web Developer</div>
+                        <div class="experience-company">SwAlliance Developers</div>
+                    </div>
+                    <div class="experience-date">April 2023 - August 2023</div>
+                </div>
+                <div class="experience-description">
+                    <ul>
+                        <li>Maintenance and implementation of new ERP modules</li>
+                        <li>Worked with custom PHP framework + Apache + PostgreSQL + JavaScript</li>
+                        <li>Utilized custom templates and smarty library</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section">
+            <h2>Academic Education</h2>
+            
+            <div class="education-item">
+                <div class="education-degree">Technologist in Systems Analysis and Development</div>
+                <div class="education-school">Estácio - EAD - Polo Itararé - Teresina-PI</div>
+                <div class="education-date">October 2021 - January 2024</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-degree">Degree in Civil Engineering</div>
+                <div class="education-school">State University of Piauí - UESPI</div>
+                <div class="education-date">March 2011 - June 2017</div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cv-section">
+            <h2>Certifications</h2>
+            <div class="education-item">
+                <div class="education-degree">Complete Modern Web Course with JavaScript 2022 + Projects</div>
+                <div class="education-school">Cod3r - Udemy</div>
+                <div class="education-date">2022</div>
+            </div>
+            <div class="education-item">
+                <div class="education-degree">Bootcamp OutSystems Reactive and Mobile</div>
+                <div class="education-school">Sys Academy (Sys Manager)</div>
+            </div>
+            <div class="education-item">
+                <div class="education-degree">Revit</div>
+                <div class="education-school">University of Colorado at Boulder</div>
+                <div class="education-date">2015</div>
+            </div>
+            <div class="education-item">
+                <div class="education-degree">Advanced Excel</div>
+                <div class="education-school">Senac</div>
+                <div class="education-date">2013</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="cv-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>No-Code/Low-Code</h3>
+                    <ul class="skill-list">
+                        <li>Bubble.io (Expert)</li>
+                        <li>FlutterFlow</li>
+                        <li>OutSystems</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>API Integrations</h3>
+                    <ul class="skill-list">
+                        <li>WhatsApp API</li>
+                        <li>Stripe Payment Gateway</li>
+                        <li>Google APIs</li>
+                        <li>OpenAI & Leonardo AI</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li>ClickUp</li>
+                        <li>GitHub</li>
+                        <li>Database Design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="cv-section">
+            <h2>Languages</h2>
+            <div>
+                <span class="language-item">🇺🇸 English - Advanced (IEC - University of Colorado at Boulder)</span>
+                <span class="language-item">🇪🇸 Spanish - Intermediate</span>
+                <span class="language-item">🇧🇷 Portuguese - Native</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

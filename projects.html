@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Italo Saraiva Gonçalves</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg-dark: #0f172a;
+            --bg-section: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #22d3ee;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem;
+            background: var(--bg-section);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 3rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 15px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 2rem;
+            background: var(--bg-section);
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 25px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: var(--primary);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(34, 211, 238, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: 'VIEW PROJECT';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 1;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .project-company {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 15px;
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            transform: translateX(5px);
+        }
+
+        /* Featured Badge */
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--gradient);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ITALO.DEV</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>My Projects</h1>
+        <p>Showcasing innovative solutions built with Bubble.io and modern web technologies</p>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Completed Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">API Integrations</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Featured Work</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active">All Projects</button>
+                <button class="filter-btn">SaaS</button>
+                <button class="filter-btn">E-Commerce</button>
+                <button class="filter-btn">Mobile</button>
+                <button class="filter-btn">AI Integration</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1: Meni Digital -->
+                <div class="project-card">
+                    <span class="featured-badge">Co-Founded</span>
+                    <div class="project-image">🚀</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Meni Digital</h3>
+                        <p class="project-company">Digital Agency Platform</p>
+                        <p class="project-description">
+                            Co-founded digital agency specializing in no-code solutions. Developed the main platform showcasing services, portfolio, and client management system.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bubble.io</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API Integration</span>
+                        </div>
+                        <a href="https://meni.digital" target="_blank" class="project-link">
+                            Visit Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: BusQme -->
+                <div class="project-card">
+                    <div class="project-image">🔍</div>
+                    <div class="project-content">
+                        <h3 class="project-title">BusQme</h3>
+                        <p class="project-company">Service Marketplace</p>
+                        <p class="project-description">
+                            Built a comprehensive service search and booking platform with real-time availability, payment integration, and user reviews system.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bubble.io</span>
+                            <span class="tech-tag">Stripe API</span>
+                            <span class="tech-tag">Database Design</span>
+                        </div>
+                        <a href="https://app.busqme.com.br" target="_blank" class="project-link">
+                            Visit Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: WeFlow -->
+                <div class="project-card">
+                    <span class="featured-badge">AI Powered</span>
+                    <div class="project-image">🌊</div>
+                    <div class="project-content">
+                        <h3 class="project-title">WeFlow</h3>
+                        <p class="project-company">Workflow Automation</p>
+                        <p class="project-description">
+                            Developed workflow automation platform with AI integration for business process optimization and team collaboration features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bubble.io</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">WhatsApp API</span>
+                        </div>
+                        <a href="https://weflow.com.br" target="_blank" class="project-link">
+                            Visit Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Agência Genial -->
+                <div class="project-card">
+                    <div class="project-image">💡</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Agência Genial</h3>
+                        <p class="project-company">Marketing Agency</p>
+                        <p class="project-description">
+                            Created a dynamic marketing agency website with portfolio showcase, lead generation forms, and integrated analytics dashboard.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bubble.io</span>
+                            <span class="tech-tag">Google APIs</span>
+                            <span class="tech-tag">CRM Integration</span>
+                        </div>
+                        <a href="https://www.agenciagenial.com" target="_blank" class="project-link">
+                            Visit Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5: PetConnect -->
+                <div class="project-card">
+                    <span class="featured-badge">Mobile</span>
+                    <div class="project-image">🐾</div>
+                    <div class="project-content">
+                        <h3 class="project-title">PetConnect MVP</h3>
+                        <p class="project-company">Pet Services App</p>
+                        <p class="project-description">
+                            Built mobile-first MVP for pet services marketplace using FlutterFlow, featuring real-time booking, location services, and in-app messaging.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">FlutterFlow</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Mobile Design</span>
+                        </div>
+                        <a href="https://pet-connect-mvp.flutterflow.app/homepage" target="_blank" class="project-link">
+                            Visit App →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6: OneStepAfter -->
+                <div class="project-card">
+                    <div class="project-image">👣</div>
+                    <div class="project-content">
+                        <h3 class="project-title">OneStepAfter</h3>
+                        <p class="project-company">Personal Development Platform</p>
+                        <p class="project-description">
+                            Developed goal-tracking and personal development platform with progress visualization, habit tracking, and community features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bubble.io</span>
+                            <span class="tech-tag">Data Analytics</span>
+                            <span class="tech-tag">Social Features</span>
+                        </div>
+                        <a href="https://onestepafter.com" target="_blank" class="project-link">
+                            Visit Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7: GrantChamps -->
+                <div class="project-card">
+                    <span class="featured-badge">SaaS</span>
+                    <div class="project-image">🏆</div>
+                    <div class="project-content">
+                        <h3 class="project-title">GrantChamps</h3>
+                        <p class="project-company">Grant Management System</p>
+                        <p class="project-description">
+                            Built comprehensive grant management SaaS platform with application tracking, document management, and automated workflows.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bubble.io</span>
+                            <span class="tech-tag">Document Processing</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <a href="https://www.grantchamps.com" target="_blank" class="project-link">
+                            Visit Site →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 8: HiVaulted -->
+                <div class="project-card">
+                    <div class="project-image">🔐</div>
+                    <div class="project-content">
+                        <h3 class="project-title">HiVaulted</h3>
+                        <p class="project-company">Secure Storage Platform</p>
+                        <p class="project-description">
+                            Developed secure digital vault platform for document storage with encryption, sharing capabilities, and compliance features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Bubble.io</span>
+                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">Cloud Storage</span>
+                        </div>
+                        <a href="https://www.hivaulted.com" target="_blank" class="project-link">
+                            Visit Site →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // In a real implementation, this would filter the projects
+            });
+        });
+
+        // Add animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                }
+            });
+        });
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
