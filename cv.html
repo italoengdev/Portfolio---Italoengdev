@@ -395,11 +395,26 @@
         </div>
 
         <!-- Download Button -->
+        <!-- 
+        INSTRUCTIONS TO ADD YOUR CV:
+        1. Upload your CV PDF to GitHub (in a repository)
+        2. Click on the PDF file in GitHub
+        3. Click "Raw" button
+        4. Copy the URL (it should look like: https://raw.githubusercontent.com/yourusername/yourrepo/main/cv.pdf)
+        5. Replace YOUR_PDF_URL_HERE below with your URL
+        
+        Alternative options:
+        - Google Drive: Right-click file > Get link > Change to "Anyone with link" > Copy link
+        - Dropbox: Share > Create link > Copy link (change ?dl=0 to ?dl=1 at the end)
+        -->
         <div class="download-section">
-            <button class="download-btn" onclick="alert('In a real implementation, this would download the PDF version of the CV')">
+            <a href="YOUR_PDF_URL_HERE" download="Italo_Saraiva_CV.pdf" class="download-btn" target="_blank">
                 <span>📥</span>
                 <span>Download CV (PDF)</span>
-            </button>
+            </a>
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;">
+                Click to download the full PDF version
+            </p>
         </div>
 
         <!-- Summary -->
