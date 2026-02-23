@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Italo Saraiva - Fullstack Developer & No-Code Expert</title>
+    <title>Italo.dev - Full Stack Developer & UI/UX Enthusiast</title>
     <style>
         * {
             margin: 0;
@@ -12,14 +12,17 @@
         }
 
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --bg-dark: #0f172a;
-            --bg-section: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --accent: #22d3ee;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --primary: #3B82F6;
+            --primary-hover: #2563eb;
+            --bg-dark: #111827;
+            --bg-card: #1f2937;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --border-subtle: rgba(148, 163, 184, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -35,11 +38,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(17, 24, 39, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .nav-container {
@@ -52,49 +55,51 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 3s ease-in-out infinite;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: inherit;
         }
 
-        @keyframes glow {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.2); }
+        .logo svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            opacity: 0.9;
         }
 
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 2rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-primary);
             text-decoration: none;
-            transition: all 0.3s;
-            position: relative;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
+        .btn-nav {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 500;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .btn-nav:hover {
+            background: var(--primary-hover);
+            color: white !important;
         }
 
         /* Hero Section */
@@ -102,122 +107,207 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
             padding: 6rem 2rem 4rem;
-            position: relative;
-            background: radial-gradient(ellipse at bottom, #1e293b 0%, #0f172a 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
-            animation: float 20s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(1deg); }
-            66% { transform: translate(-20px, 20px) rotate(-1deg); }
-        }
-
-        .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+            gap: 3rem;
+        }
+
+        .hero-left {
+            flex: 1;
+            max-width: 560px;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient 3s ease infinite;
-            background-size: 200% 200%;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .hero h1 .accent {
+            color: var(--primary);
         }
 
-        .hero .subtitle {
-            font-size: 1.5rem;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero-tools {
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-tools-label {
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
-            animation: slideInUp 0.8s ease-out;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-tools-list {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-tools-list a,
+        .hero-tools-list span {
+            display: inline-flex;
+            align-items: center;
+            height: 28px;
+        }
+
+        .hero-tools-list img {
+            height: 24px;
+            width: auto;
+            max-width: 100px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .hero-tools-list img.hero-tool-dark {
+            filter: none;
+        }
+
+        .hero-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 480px;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-primary {
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            background: var(--primary-hover);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: var(--text-primary);
             background: transparent;
         }
 
         .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
+            border-color: white;
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        /* About Section */
-        .about {
+        .btn svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .hero-right {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 12px;
+            overflow: visible;
+        }
+
+        .hero-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+        }
+
+        .open-to-work {
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            z-index: 10;
+            background: rgba(31, 41, 55, 0.95);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .open-to-work-icon {
+            width: 2rem;
+            height: 2rem;
+            background: rgba(34, 197, 94, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .open-to-work-icon svg {
+            width: 1rem;
+            height: 1rem;
+            color: #22c55e;
+        }
+
+        .open-to-work-text strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .open-to-work-text span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Projects Section */
+        .projects {
             padding: 5rem 2rem;
-            background: var(--bg-section);
+            background: var(--bg-dark);
         }
 
         .section-container {
@@ -225,328 +315,527 @@
             margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .about-card {
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient);
-            border-radius: 15px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            z-index: -1;
-        }
-
-        .about-card:hover::before {
-            opacity: 1;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-            background: rgba(30, 41, 59, 0.8);
-        }
-
-        .about-card h3 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .about-card p {
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
             color: var(--text-secondary);
-            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
 
-        /* Skills Section */
-        .skills {
-            padding: 5rem 2rem;
-            background: var(--bg-dark);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .skill-item {
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            border-radius: 10px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            transition: all 0.3s;
-            cursor: default;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px) scale(1.05);
-            background: rgba(99, 102, 241, 0.1);
-            border-color: var(--primary);
-        }
-
-        .skill-icon {
-            font-size: 2rem;
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
-        .skill-name {
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            max-width: 560px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .project-card-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .project-card-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .project-card-body {
+            padding: 1.25rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-company {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
             font-size: 0.9rem;
             color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags span {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .project-link:hover {
+            color: var(--primary-hover);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 1;
         }
 
         /* Contact Section */
         .contact {
             padding: 5rem 2rem;
-            background: var(--bg-section);
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .contact .section-container {
             text-align: center;
         }
 
-        .contact-links {
+        .contact .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icons {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        .contact-link {
+        .contact-icons a {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
+            justify-content: center;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            background: rgba(30, 41, 59, 0.5);
+            transition: all 0.2s;
         }
 
-        .contact-link:hover {
-            color: var(--accent);
-            background: rgba(34, 211, 238, 0.1);
-            transform: translateY(-3px);
+        .contact-icons a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .contact-icons svg {
+            width: 1.25rem;
+            height: 1.25rem;
         }
 
         /* Footer */
         footer {
             padding: 2rem;
-            text-align: center;
+            border-top: 1px solid var(--border-subtle);
             background: var(--bg-dark);
+            text-align: center;
             color: var(--text-secondary);
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            font-size: 0.9rem;
         }
 
-        /* Responsive */
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-left {
+                max-width: 100%;
+            }
+
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
-                flex-direction: column;
                 gap: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-                margin: 2rem auto 0;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">ITALO.DEV</div>
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                italoengdev
+            </a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Italo Saraiva Gonçalves</h1>
-            <p class="subtitle">Fullstack Developer | No-Code Expert | Bubble.io Specialist</p>
-            <p style="max-width: 800px; margin: 0 auto 2rem; color: var(--text-secondary); font-size: 1.1rem;">
-                Ex-Partner and Developer of the Mení Digital app, with expertise in delivering complex projects using Bubble.io, 
-                integrating APIs like WhatsApp, Google Contacts, Stripe, and AI technologies including OpenAI and Leonardo AI.
+    <section class="hero" id="hero">
+        <div class="hero-left">
+            <p class="hero-label">Portfolio</p>
+            <h1>Hi, I'm <span class="accent">Italo</span></h1>
+            <p class="hero-subtitle">Full stack, no-code & automation expert</p>
+            <div class="hero-tools">
+                <p class="hero-tools-label">Expert in:</p>
+                <div class="hero-tools-list">
+                    <a href="https://bubble.io" target="_blank" rel="noopener" title="Bubble.io" aria-label="Bubble.io">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Bubble_Logo_no_code.svg" alt="Bubble.io" class="hero-tool-dark">
+                    </a>
+                    <a href="https://n8n.io" target="_blank" rel="noopener" title="n8n" aria-label="n8n">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/N8n-logo.png" alt="n8n" class="hero-tool-dark">
+                    </a>
+                    <a href="https://powerautomate.microsoft.com" target="_blank" rel="noopener" title="Power Automate" aria-label="Power Automate">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Microsoft_Power_Automate.svg" alt="Power Automate" class="hero-tool-dark">
+                    </a>
+                    <a href="https://cursor.com/download" target="_blank" rel="noopener" title="Cursor" aria-label="Cursor">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Cursor_logo.svg" alt="Cursor" class="hero-tool-dark">
+                    </a>
+                </div>
+            </div>
+            <p class="hero-desc">
+                I specialize in building accessible, pixel-perfect, and performant web experiences. Let's turn complex problems into elegant solutions together.
             </p>
             <div class="hero-buttons">
-                <a href="projects.html" class="btn btn-primary">
-                    <span>View My Projects</span>
-                    <span>→</span>
+                <a href="#projects" class="btn btn-primary">
+                    View My Work
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <a href="https://github.com/italoengdev/Portfolio---Italoengdev/raw/e4f478303347481411bece9f2e4996be1711bab9/CV%20-%20italo%20saraiva%20gon%C3%A7alves.pdf
-" class="btn btn-secondary">
-                    <span>Download CV</span>
-                    <span>↓</span>
+                <a href="CV - italo saraiva gonçalves.pdf" class="btn btn-secondary" download>
+                    Download CV
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                 </a>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <div class="section-container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3>🚀 No-Code Innovation</h3>
-                    <p>Specialized in Bubble.io development with proven track record in building and optimizing applications for startups like Genial, WeFlow, and PetConnect. Expert in creating scalable SaaS platforms and MVPs.</p>
-                </div>
-                <div class="about-card">
-                    <h3>💻 Technical Excellence</h3>
-                    <p>Fullstack developer combining no-code efficiency with custom JavaScript solutions. Experienced in complex API integrations, payment gateways, and AI implementation for innovation-driven solutions.</p>
-                </div>
-                <div class="about-card">
-                    <h3>🌐 International Experience</h3>
-                    <p>Advanced English proficiency from University of Colorado at Boulder. Worked with diverse international clients and teams, delivering projects that meet global standards and expectations.</p>
+        <div class="hero-right">
+            <div class="hero-image-wrap">
+                <img src="assets/hero-profile.png" alt="Italo - Full stack, no-code & automation expert" class="hero-image">
+                <div class="open-to-work">
+                    <div class="open-to-work-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                    </div>
+                    <div class="open-to-work-text">
+                        <strong>Open to Work</strong>
+                        <span>Available for new projects</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills">
+    <section class="projects" id="projects">
         <div class="section-container">
-            <h2 class="section-title">Core Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-icon">🔵</div>
-                    <div class="skill-name">Bubble.io</div>
+            <p class="section-label">My Work</p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-desc">A selection of projects I've built with Bubble.io and modern web technologies.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="https://images.squarespace-cdn.com/content/v1/682caf481e81f736dd08e9db/60c2d584-c356-49f5-a462-77c5aa64e05a/082815_4584_SDi_LOGO_4C-Photoroom.png?format=1500w" alt="SDI">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>SDI</h3>
+                        <p class="project-company">Automation & Workflow</p>
+                        <p>Automation solutions with Power Automate and N8N, including Microsoft Teams automation to streamline internal processes.</p>
+                        <div class="project-tags">
+                            <span>Power Automate</span>
+                            <span>N8N</span>
+                            <span>Microsoft Teams</span>
+                        </div>
+                        <a href="https://www.securitydoorinc.com/" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">⚡</div>
-                    <div class="skill-name">JavaScript</div>
+
+                <div class="project-card">
+                    <span class="featured-badge">New</span>
+                    <div class="project-card-image">
+                        <img src="https://namtab.io/wp-content/uploads/2024/09/Logo-NAMTAB-Oficial-300x90.png" alt="NamTab">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>NamTab</h3>
+                        <p class="project-company">AI-powered Platform</p>
+                        <p>Innovative platform leveraging AI to optimize business processes and data management.</p>
+                        <div class="project-tags">
+                            <span>AI</span>
+                            <span>Automation</span>
+                            <span>Web App</span>
+                        </div>
+                        <a href="https://namtab.io/" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🔌</div>
-                    <div class="skill-name">API Integration</div>
+
+                <div class="project-card">
+                    <span class="featured-badge">Co-Founded</span>
+                    <div class="project-card-image">
+                        <img src="https://meni.digital/assets/meni-logo.svg" alt="Meni Digital">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>Meni Digital</h3>
+                        <p class="project-company">Digital Agency Platform</p>
+                        <p>Ex-partner in this startup: a system for customer service in food establishments, helping to increase table turnover and boost marketing results.</p>
+                        <div class="project-tags">
+                            <span>Bubble.io</span>
+                            <span>JavaScript</span>
+                            <span>API Integration</span>
+                        </div>
+                        <a href="https://meni.digital" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">💳</div>
-                    <div class="skill-name">Stripe</div>
+
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="https://31d148fd2607ea89284056f846aabc85.cdn.bubble.io/cdn-cgi/image/w=192,h=60,f=auto,dpr=1,fit=contain/f1691174954176x398969295529895360/logo1.png" alt="BusQme">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>BusQme</h3>
+                        <p class="project-company">Service Marketplace</p>
+                        <p>Built a comprehensive service search and booking platform with real-time availability, payment integration, and user reviews system.</p>
+                        <div class="project-tags">
+                            <span>Bubble.io</span>
+                            <span>Stripe API</span>
+                            <span>Database Design</span>
+                        </div>
+                        <a href="https://app.busqme.com.br" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🤖</div>
-                    <div class="skill-name">OpenAI</div>
+
+                <div class="project-card">
+                    <span class="featured-badge">AI Powered</span>
+                    <div class="project-card-image">
+                        <img src="https://8e8a80e64f0f93dea7a8faf8fe332b1b.cdn.bubble.io/cdn-cgi/image/w=256,h=61,f=auto,dpr=1,fit=contain/f1712088891878x503406777074544300/LOGO_01%4072x.png" alt="WeFlow">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>WeFlow</h3>
+                        <p class="project-company">Workflow Automation</p>
+                        <p>Developed workflow automation platform with AI integration for business process optimization and team collaboration features.</p>
+                        <div class="project-tags">
+                            <span>Bubble.io</span>
+                            <span>OpenAI</span>
+                            <span>WhatsApp API</span>
+                        </div>
+                        <a href="https://weflow.com.br" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">📱</div>
-                    <div class="skill-name">WhatsApp API</div>
+
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="https://cdn.lugc.link/898129ae-aae1-4abc-9ca0-4e480bcf5d97/-/rotate/180/-/preview/106x106/-/format/auto/" alt="Agência Genial">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>Agência Genial</h3>
+                        <p class="project-company">Marketing Agency</p>
+                        <p>Platform to manage social media content.</p>
+                        <div class="project-tags">
+                            <span>Meta API</span>
+                            <span>WhatsApp API</span>
+                            <span>X API</span>
+                            <span>Pinterest API</span>
+                            <span>Stripe</span>
+                            <span>Open AI API</span>
+                        </div>
+                        <a href="https://www.agenciagenial.com" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🎨</div>
-                    <div class="skill-name">FlutterFlow</div>
+
+                <div class="project-card">
+                    <span class="featured-badge">Mobile</span>
+                    <div class="project-card-image">
+                        <img src="https://b958627177f1d8330169916034dbdaa1.cdn.bubble.io/cdn-cgi/image/w=384,h=246,f=auto,dpr=1,fit=contain/f1728496112710x917478375898301400/logo.png" alt="PetConnect">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>PetConnect MVP</h3>
+                        <p class="project-company">Pet Services App</p>
+                        <p>Built mobile-first MVP for pet services marketplace using FlutterFlow, featuring real-time booking, location services, and in-app messaging.</p>
+                        <div class="project-tags">
+                            <span>FlutterFlow</span>
+                            <span>Firebase</span>
+                            <span>Mobile Design</span>
+                        </div>
+                        <a href="https://pet-connect-mvp.flutterflow.app/homepage" target="_blank" rel="noopener" class="project-link">Visit App →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">📊</div>
-                    <div class="skill-name">Database Design</div>
+
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="https://95e613f02003f90fcc641358229cd4bf.cdn.bubble.io/f1738938360334x290337850591458400/Margin.svg" alt="OneStepAfter">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>OneStepAfter</h3>
+                        <p class="project-company">Personal Development Platform</p>
+                        <p>Developed goal-tracking and personal development platform with progress visualization, habit tracking, and community features.</p>
+                        <div class="project-tags">
+                            <span>Bubble.io</span>
+                            <span>Data Analytics</span>
+                            <span>Social Features</span>
+                        </div>
+                        <a href="https://onestepafter.com" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🔧</div>
-                    <div class="skill-name">OutSystems</div>
+
+                <div class="project-card">
+                    <span class="featured-badge">SaaS</span>
+                    <div class="project-card-image">
+                        <img src="https://static.wixstatic.com/media/df75cc_53a797d84030416aa8bfae63a65e2a17~mv2.png/v1/crop/x_0,y_210,w_500,h_80/fill/w_231,h_36,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/White%20Logo%20Transparent%20Background.png" alt="GrantChamps">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>GrantChamps</h3>
+                        <p class="project-company">Grant Management System</p>
+                        <p>Built comprehensive grant management SaaS platform with application tracking, document management, and automated workflows.</p>
+                        <div class="project-tags">
+                            <span>Bubble.io</span>
+                            <span>Document Processing</span>
+                            <span>Automation</span>
+                        </div>
+                        <a href="https://www.grantchamps.com" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">☁️</div>
-                    <div class="skill-name">SaaS Development</div>
+
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="https://288246a9161442a0cb6c83da6a253b94.cdn.bubble.io/cdn-cgi/image/w=192,h=41,f=auto,dpr=1,fit=contain/f1746059356548x308183918145610750/Logo.png" alt="HiVaulted">
+                    </div>
+                    <div class="project-card-body">
+                        <h3>HiVaulted</h3>
+                        <p class="project-company">Platform to manage social media post content</p>
+                        <p>Developed secure digital vault platform for document storage with encryption, sharing capabilities, and compliance features.</p>
+                        <div class="project-tags">
+                            <span>Bubble.io</span>
+                            <span>Meta API</span>
+                            <span>LinkedIn API</span>
+                            <span>Cloudinary API</span>
+                            <span>Stripe API</span>
+                            <span>Twilio API</span>
+                            <span>Outlook API</span>
+                        </div>
+                        <a href="https://www.hivaulted.com" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-container">
-            <h2 class="section-title">Ready to Start Your Project?</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Let's discuss how I can help bring your ideas to life with efficient no-code solutions. I'm currently available for new projects and collaborations.
-            </p>
-            <div style="margin-top: 2rem;">
-                <a href="contact.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <span>Get In Touch</span>
-                    <span>→</span>
+            <p class="section-label">Get in touch</p>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-desc">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+            <div class="contact-actions">
+                <a href="mailto:italosaraiva182@gmail.com" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                    italosaraiva182@gmail.com
+                </a>
+                <a href="https://wa.me/5586999843969" target="_blank" rel="noopener" class="btn btn-primary" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp +55 86 99984-3969
                 </a>
             </div>
-            <div class="contact-links" style="margin-top: 3rem;">
-                <a href="mailto:italosaraiva182@gmail.com" class="contact-link">
-                    <span>📧</span>
-                    <span>Email</span>
+            <div class="contact-icons">
+                <a href="https://github.com/italoengdev" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 </a>
-                <a href="https://wa.me/5586999843969" class="contact-link" target="_blank">
-                    <span>📱</span>
-                    <span>WhatsApp</span>
+                <a href="https://linkedin.com/in/italoengdev" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 </a>
-                <a href="https://github.com/italoengdev" class="contact-link" target="_blank">
-                    <span>🔗</span>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/italoengdev" class="contact-link" target="_blank">
-                    <span>💼</span>
-                    <span>LinkedIn</span>
+                <a href="mailto:italosaraiva182@gmail.com" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Italo Saraiva Gonçalves. All rights reserved.</p>
+        <p>© <span id="footer-year"></span> <a href="https://linkedin.com/in/italoengdev" target="_blank" rel="noopener">italoengdev</a>. All rights reserved.</p>
     </footer>
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
