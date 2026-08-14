@@ -71,6 +71,19 @@ body:not(.project-page) .education-school {
     color: var(--site-accent);
 }
 
+.hero-tools-list .hero-tool-text {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 0.65rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+}
+
 .capabilities {
     padding: 0 2rem 5rem;
     background: var(--site-ink);
