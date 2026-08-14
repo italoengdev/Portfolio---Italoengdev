@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Italo Saraiva Gonçalves</title>
+    <title>Projects | Italo.dev | Product and Automation Case Studies</title>
+    <meta name="description" content="Explore selected product case studies by Italo Saraiva Goncalves, spanning SaaS, mobile apps, Bubble.io systems, AI workflows, and API integrations.">
+    <meta name="author" content="Italo Saraiva Goncalves">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#07111f">
+    <link rel="canonical" href="https://portfolio-italo-dev.vercel.app/projects.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Italo.dev">
+    <meta property="og:title" content="Projects | Italo.dev | Product and Automation Case Studies">
+    <meta property="og:description" content="Selected product case studies spanning SaaS, mobile apps, AI workflows, and API integrations.">
+    <meta property="og:url" content="https://portfolio-italo-dev.vercel.app/projects.html">
+    <meta property="og:image" content="https://portfolio-italo-dev.vercel.app/assets/hero-profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects | Italo.dev | Product and Automation Case Studies">
+    <meta name="twitter:description" content="Selected product case studies spanning SaaS, mobile apps, AI workflows, and API integrations.">
+    <meta name="twitter:image" content="https://portfolio-italo-dev.vercel.app/assets/hero-profile.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PNVL3VXGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1PNVL3VXGY');
+    </script>
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Sn Cn init Hn Un Gn Yi zn Kn qn capture Vn kn calculateEventProperties es register register_once register_for_session unregister unregister_for_session os Bn ss getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync ls identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset us shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty rs Xn createPersonProfile setInternalOrTestUser ns $n vs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Jn debug tr At getPageViewId captureTraceFeedback captureTraceMetric Ln".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_CRLUpFa5tiQEURL8CV9F3SaUQA2bE2EmhUQud4Ui5nYn', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2026-05-30',
+            person_profiles: 'identified_only',
+        })
+    </script>
     <style>
         * {
             margin: 0;
@@ -270,6 +304,10 @@
             opacity: 1;
         }
 
+        .project-card.is-hidden {
+            display: none;
+        }
+
         .project-image {
             width: 100%;
             height: 200px;
@@ -384,15 +422,20 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- Navigation -->
-    <nav>
+    <nav class="site-nav" aria-label="Primary navigation">
         <div class="nav-container">
-            <div class="logo">ITALO.DEV</div>
-            <ul class="nav-links">
+            <a href="index.html" class="logo" aria-label="Italo.dev home">&lt;/&gt; italo.dev</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+                <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+            </button>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -400,17 +443,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero">
-        <h1>My Projects</h1>
-        <p>Showcasing innovative solutions built with Bubble.io and modern web technologies</p>
+    <div class="hero" id="main-content">
+        <h1>Selected Work</h1>
+        <p>Case studies from production-oriented work across SaaS, mobile products, automation, and API integrations.</p>
     </div>
 
     <!-- Stats Section -->
     <div class="stats">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">8+</div>
-                <div class="stat-label">Completed Projects</div>
+                <div class="stat-number">14</div>
+                <div class="stat-label">Selected case studies</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">3+</div>
@@ -421,8 +464,8 @@
                 <div class="stat-label">API Integrations</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Client Satisfaction</div>
+                <div class="stat-number">End-to-end</div>
+                <div class="stat-label">Product delivery mindset</div>
             </div>
         </div>
     </div>
@@ -434,20 +477,20 @@
             
             <!-- Filter Buttons -->
             <div class="filter-buttons">
-                <button class="filter-btn active">All Projects</button>
-                <button class="filter-btn">SaaS</button>
-                <button class="filter-btn">E-Commerce</button>
-                <button class="filter-btn">Mobile</button>
-                <button class="filter-btn">AI Integration</button>
+                <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All work</button>
+                <button class="filter-btn" type="button" data-filter="saas" aria-pressed="false">SaaS</button>
+                <button class="filter-btn" type="button" data-filter="platform" aria-pressed="false">Platforms</button>
+                <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+                <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI &amp; automation</button>
             </div>
             
             <!-- Projects Grid -->
             <div class="projects-grid">
                 <!-- Project: NamTab -->
-                <div class="project-card">
+                <div class="project-card" data-category="ai">
                     <span class="featured-badge">New</span>
                     <div class="project-image">
-                        <img src="https://namtab.io/wp-content/uploads/2024/09/Logo-NAMTAB-Oficial-300x90.png" alt="NamTab Logo" style="max-width: 100%; max-height: 100%;">
+                        <img src="https://namtab.io/wp-content/uploads/2024/09/Logo-NAMTAB-Oficial-300x90.png" alt="NamTab logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">NamTab</h3>
@@ -460,17 +503,17 @@
                             <span class="tech-tag">Automation</span>
                             <span class="tech-tag">Web App</span>
                         </div>
-                        <a href="https://namtab.io/" target="_blank" class="project-link">
-                            Visit Site →
+                        <a href="projects/namtab.html" class="project-link">
+                            Read case study →
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 1: Meni Digital -->
-                <div class="project-card">
+                <div class="project-card" data-category="platform">
                     <span class="featured-badge">Co-Founded</span>
                     <div class="project-image">
-                        <img src="https://meni.digital/assets/meni-logo.svg" alt="Meni Digital Logo" style="max-width: 100%; max-height: 100%;">
+                        <img src="assets/meni-logo.svg" alt="Meni Digital logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Meni Digital</h3>
@@ -483,16 +526,16 @@
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">API Integration</span>
                         </div>
-                        <a href="https://meni.digital" target="_blank" class="project-link">
-                            Visit Site →
+                        <a href="projects/meni-digital.html" class="project-link">
+                            Read case study →
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 2: BusQme -->
-                <div class="project-card">
+                <div class="project-card" data-category="platform">
                     <div class="project-image">
-                        <img src="https://31d148fd2607ea89284056f846aabc85.cdn.bubble.io/cdn-cgi/image/w=192,h=60,f=auto,dpr=1,fit=contain/f1691174954176x398969295529895360/logo1.png" alt="BusQme Logo" style="max-width: 100%; max-height: 100%;">
+                        <img src="https://31d148fd2607ea89284056f846aabc85.cdn.bubble.io/cdn-cgi/image/w=192,h=60,f=auto,dpr=1,fit=contain/f1691174954176x398969295529895360/logo1.png" alt="BusQme logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">BusQme</h3>
@@ -505,62 +548,17 @@
                             <span class="tech-tag">Stripe API</span>
                             <span class="tech-tag">Database Design</span>
                         </div>
-                        <a href="https://app.busqme.com.br" target="_blank" class="project-link">
-                            Visit Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3: WeFlow -->
-                <div class="project-card">
-                    <span class="featured-badge">AI Powered</span>
-                    <div class="project-image">
-                        <img src="https://8e8a80e64f0f93dea7a8faf8fe332b1b.cdn.bubble.io/cdn-cgi/image/w=256,h=61,f=auto,dpr=1,fit=contain/f1712088891878x503406777074544300/LOGO_01%4072x.png" alt="WeFlow Logo" style="max-width: 100%; max-height: 100%;">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">WeFlow</h3>
-                        <p class="project-company">Workflow Automation</p>
-                        <p class="project-description">
-                            Developed workflow automation platform with AI integration for business process optimization and team collaboration features.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Bubble.io</span>
-                            <span class="tech-tag">OpenAI</span>
-                            <span class="tech-tag">WhatsApp API</span>
-                        </div>
-                        <a href="https://weflow.com.br" target="_blank" class="project-link">
-                            Visit Site →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Agência Genial -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://cdn.lugc.link/898129ae-aae1-4abc-9ca0-4e480bcf5d97/-/rotate/180/-/preview/106x106/-/format/auto/" alt="Agência Genial Logo" style="max-width: 100%; max-height: 100%;">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Agência Genial</h3>
-                        <p class="project-company">Marketing Agency</p>
-                        <p class="project-description">
-                            Created a dynamic marketing agency website with portfolio showcase, lead generation forms, and integrated analytics dashboard.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Bubble.io</span>
-                            <span class="tech-tag">Google APIs</span>
-                            <span class="tech-tag">CRM Integration</span>
-                        </div>
-                        <a href="https://www.agenciagenial.com" target="_blank" class="project-link">
-                            Visit Site →
+                        <a href="projects/busqme.html" class="project-link">
+                            Read case study →
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 5: PetConnect -->
-                <div class="project-card">
+                <div class="project-card" data-category="mobile">
                     <span class="featured-badge">Mobile</span>
                     <div class="project-image">
-                        <img src="https://b958627177f1d8330169916034dbdaa1.cdn.bubble.io/cdn-cgi/image/w=384,h=246,f=auto,dpr=1,fit=contain/f1728496112710x917478375898301400/logo.png" alt="PetConnect Logo" style="max-width: 100%; max-height: 100%;">
+                        <img src="https://b958627177f1d8330169916034dbdaa1.cdn.bubble.io/cdn-cgi/image/w=384,h=246,f=auto,dpr=1,fit=contain/f1728496112710x917478375898301400/logo.png" alt="PetConnect logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">PetConnect MVP</h3>
@@ -573,16 +571,16 @@
                             <span class="tech-tag">Firebase</span>
                             <span class="tech-tag">Mobile Design</span>
                         </div>
-                        <a href="https://pet-connect-mvp.flutterflow.app/homepage" target="_blank" class="project-link">
-                            Visit App →
+                        <a href="projects/petconnect.html" class="project-link">
+                            Read case study →
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 6: OneStepAfter -->
-                <div class="project-card">
+                <div class="project-card" data-category="platform">
                     <div class="project-image">
-                        <img src="https://95e613f02003f90fcc641358229cd4bf.cdn.bubble.io/f1738938360334x290337850591458400/Margin.svg" alt="OneStepAfter Logo" style="max-width: 100%; max-height: 100%;">
+                        <img src="https://95e613f02003f90fcc641358229cd4bf.cdn.bubble.io/f1738938360334x290337850591458400/Margin.svg" alt="OneStepAfter logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">OneStepAfter</h3>
@@ -595,17 +593,17 @@
                             <span class="tech-tag">Data Analytics</span>
                             <span class="tech-tag">Social Features</span>
                         </div>
-                        <a href="https://onestepafter.com" target="_blank" class="project-link">
-                            Visit Site →
+                        <a href="projects/onestepafter.html" class="project-link">
+                            Read case study →
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 7: GrantChamps -->
-                <div class="project-card">
+                <div class="project-card" data-category="saas">
                     <span class="featured-badge">SaaS</span>
                     <div class="project-image">
-                        <img src="https://static.wixstatic.com/media/df75cc_53a797d84030416aa8bfae63a65e2a17~mv2.png/v1/crop/x_0,y_210,w_500,h_80/fill/w_231,h_36,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/White%20Logo%20Transparent%20Background.png" alt="GrantChamps Logo" style="max-width: 100%; max-height: 100%;">
+                        <img src="https://static.wixstatic.com/media/df75cc_53a797d84030416aa8bfae63a65e2a17~mv2.png/v1/crop/x_0,y_210,w_500,h_80/fill/w_231,h_36,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/White%20Logo%20Transparent%20Background.png" alt="GrantChamps logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">GrantChamps</h3>
@@ -618,45 +616,96 @@
                             <span class="tech-tag">Document Processing</span>
                             <span class="tech-tag">Automation</span>
                         </div>
-                        <a href="https://www.grantchamps.com" target="_blank" class="project-link">
-                            Visit Site →
+                        <a href="projects/grantchamps.html" class="project-link">
+                            Read case study →
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 8: HiVaulted -->
-                <div class="project-card">
+                <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="https://288246a9161442a0cb6c83da6a253b94.cdn.bubble.io/cdn-cgi/image/w=192,h=41,f=auto,dpr=1,fit=contain/f1746059356548x308183918145610750/Logo.png" alt="HiVaulted Logo" style="max-width: 100%; max-height: 100%;">
+                        <img src="https://288246a9161442a0cb6c83da6a253b94.cdn.bubble.io/cdn-cgi/image/w=192,h=41,f=auto,dpr=1,fit=contain/f1746059356548x308183918145610750/Logo.png" alt="HiVaulted logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">HiVaulted</h3>
-                        <p class="project-company">Secure Storage Platform</p>
+                        <p class="project-company">AI Social Media Platform</p>
                         <p class="project-description">
-                            Developed secure digital vault platform for document storage with encryption, sharing capabilities, and compliance features.
+                            AI-powered platform for creating and managing social media content across connected channels and services.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Bubble.io</span>
-                            <span class="tech-tag">Security</span>
-                            <span class="tech-tag">Cloud Storage</span>
+                            <span class="tech-tag">AI Content</span>
+                            <span class="tech-tag">Meta API</span>
+                            <span class="tech-tag">LinkedIn API</span>
+                            <span class="tech-tag">Twilio API</span>
                         </div>
-                        <a href="https://www.hivaulted.com" target="_blank" class="project-link">
-                            Visit Site →
+                        <a href="projects/hivaulted.html" class="project-link">
+                            Read case study →
                         </a>
                     </div>
+                </div>
+
+                <div class="project-card" data-category="mobile">
+                    <span class="featured-badge">Mobile</span>
+                    <div class="project-image"><img src="https://play-lh.googleusercontent.com/ZeBXMxBiRa5xM4VLKQcXSmkweyvuBfFGjO0HeIyF33D_0UhvDvJ_7PNhxpQv7T3VmtxZuxO-o-qTagaef7SdHig=w240-h480-rw" alt="NYC for Free app preview" loading="lazy" decoding="async"></div>
+                    <div class="project-content"><h3 class="project-title">NYC for Free</h3><p class="project-company">Mobile App</p><p class="project-description">Mobile product built with Expo, React Native, and Supabase for events, guides, and discounts in New York City.</p><div class="project-tech"><span class="tech-tag">React Native</span><span class="tech-tag">Expo</span><span class="tech-tag">Supabase</span></div><a href="projects/nyc-for-free.html" class="project-link">Read case study &rarr;</a></div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <span class="featured-badge">AI Agents</span>
+                    <div class="project-image"><img src="https://bizaclia.com/assets/bizaclia-logo-DBO3cvQ7.svg" alt="Bizaclia logo" loading="lazy" decoding="async"></div>
+                    <div class="project-content"><h3 class="project-title">Bizaclia</h3><p class="project-company">Real Estate Portal</p><p class="project-description">Real estate portal combining AI agents, web scraping, n8n automation, and Bubble.io workflows.</p><div class="project-tech"><span class="tech-tag">n8n</span><span class="tech-tag">AI agents</span><span class="tech-tag">Bubble.io</span></div><a href="projects/bizaclia.html" class="project-link">Read case study &rarr;</a></div>
+                </div>
+
+                <div class="project-card" data-category="saas">
+                    <span class="featured-badge">SaaS</span>
+                    <div class="project-image"><img src="https://www.beehindthescene.com/_next/static/media/Frame122.00c2f3cr12nob.svg" alt="Beehind the Scene logo" loading="lazy" decoding="async"></div>
+                    <div class="project-content"><h3 class="project-title">Beehind the Scene</h3><p class="project-company">Talent &amp; Company Platform</p><p class="project-description">Next.js and Supabase platform for talent profiles, companies, recruitment, and matching.</p><div class="project-tech"><span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">Supabase</span></div><a href="projects/beehind-the-scene.html" class="project-link">Read case study &rarr;</a></div>
+                </div>
+
+                <div class="project-card" data-category="platform">
+                    <span class="featured-badge">10k+ Users</span>
+                    <div class="project-image"><img src="https://ec82d403f672156276c1493dc9649602.cdn.bubble.io/f1728415662732x455108656273161200/Group%2065.svg" alt="The Attributes logo" loading="lazy" decoding="async"></div>
+                    <div class="project-content"><h3 class="project-title">The Attributes</h3><p class="project-company">Assessment Platform</p><p class="project-description">Bubble.io assessment platform with API integrations, an AI chatbot, and more than 10,000 active live users.</p><div class="project-tech"><span class="tech-tag">Bubble.io</span><span class="tech-tag">AI chatbot</span><span class="tech-tag">APIs</span></div><a href="projects/the-attributes.html" class="project-link">Read case study &rarr;</a></div>
+                </div>
+
+                <div class="project-card" data-category="saas">
+                    <div class="project-image"><img src="https://8ef35fc09d100bc2fd61ccfaf30f97c3.cdn.bubble.io/cdn-cgi/image/w=256,h=73,f=auto,dpr=0.75,fit=contain/f1761924580297x950607775930878400/Frame%201.png" alt="Silverdash logo" loading="lazy" decoding="async"></div>
+                    <div class="project-content"><h3 class="project-title">Silverdash</h3><p class="project-company">Financial Analytics</p><p class="project-description">Financial management platform connected to Monday.com with dynamic, customizable interactive charts.</p><div class="project-tech"><span class="tech-tag">Bubble.io</span><span class="tech-tag">Monday API</span><span class="tech-tag">Analytics</span></div><a href="projects/silverdash.html" class="project-link">Read case study &rarr;</a></div>
+                </div>
+
+                <div class="project-card" data-category="ai">
+                    <div class="project-image"><img src="https://images.squarespace-cdn.com/content/v1/682caf481e81f736dd08e9db/60c2d584-c356-49f5-a462-77c5aa64e05a/082815_4584_SDi_LOGO_4C-Photoroom.png?format=800w" alt="SDI logo" loading="lazy" decoding="async"></div>
+                    <div class="project-content"><h3 class="project-title">SDI</h3><p class="project-company">Automation &amp; Workflow</p><p class="project-description">Power Automate and n8n solutions, including Microsoft Teams automation for internal processes.</p><div class="project-tech"><span class="tech-tag">Power Automate</span><span class="tech-tag">n8n</span><span class="tech-tag">Microsoft Teams</span></div><a href="projects/sdi.html" class="project-link">Read case study &rarr;</a></div>
+                </div>
+
+                <div class="project-card" data-category="platform">
+                    <div class="project-image"><img src="https://d584f742f67b17d270eed34b53931763.cdn.bubble.io/cdn-cgi/image/w=96,h=96,f=auto,dpr=1,fit=contain/f1753740481000x729406995558590200/f3e9cb4144d5aa5faff66e95adf209cc1b6ef7a5.png" alt="Adult Hockey League logo" loading="lazy" decoding="async"></div>
+                    <div class="project-content"><h3 class="project-title">Adult Hockey League</h3><p class="project-company">League Management Platform</p><p class="project-description">Responsive league operations platform for seasons, payments, financial tracking, and dashboards.</p><div class="project-tech"><span class="tech-tag">Bubble.io</span><span class="tech-tag">Stripe</span><span class="tech-tag">Dashboards</span></div><a href="projects/adult-hockey-league.html" class="project-link">Read case study &rarr;</a></div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Simple filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
+                const filter = btn.dataset.filter;
+
+                filterBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+                });
                 btn.classList.add('active');
-                // In a real implementation, this would filter the projects
+
+                projectCards.forEach(card => {
+                    const matches = filter === 'all' || card.dataset.category === filter;
+                    card.classList.toggle('is-hidden', !matches);
+                });
             });
         });
 
@@ -673,5 +722,6 @@
             observer.observe(card);
         });
     </script>
+    <script src="assets/site.js" defer></script>
 </body>
 </html>

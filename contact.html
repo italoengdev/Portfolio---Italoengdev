@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Italo Saraiva Gonçalves</title>
+    <title>Contact | Italo.dev | Full-Stack Developer</title>
+    <meta name="description" content="Contact Italo Saraiva Goncalves about full-stack development, SaaS products, API integrations, and workflow automation.">
+    <meta name="author" content="Italo Saraiva Goncalves">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#07111f">
+    <link rel="canonical" href="https://portfolio-italo-dev.vercel.app/contact.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Italo.dev">
+    <meta property="og:title" content="Contact | Italo.dev | Full-Stack Developer">
+    <meta property="og:description" content="Discuss full-stack development, SaaS products, API integrations, and workflow automation with Italo Saraiva Goncalves.">
+    <meta property="og:url" content="https://portfolio-italo-dev.vercel.app/contact.html">
+    <meta property="og:image" content="https://portfolio-italo-dev.vercel.app/assets/hero-profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Italo.dev | Full-Stack Developer">
+    <meta name="twitter:description" content="Discuss full-stack development, SaaS products, API integrations, and workflow automation with Italo Saraiva Goncalves.">
+    <meta name="twitter:image" content="https://portfolio-italo-dev.vercel.app/assets/hero-profile.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PNVL3VXGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1PNVL3VXGY');
+    </script>
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Sn Cn init Hn Un Gn Yi zn Kn qn capture Vn kn calculateEventProperties es register register_once register_for_session unregister unregister_for_session os Bn ss getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync ls identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset us shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty rs Xn createPersonProfile setInternalOrTestUser ns $n vs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Jn debug tr At getPageViewId captureTraceFeedback captureTraceMetric Ln".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_CRLUpFa5tiQEURL8CV9F3SaUQA2bE2EmhUQud4Ui5nYn', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2026-05-30',
+            person_profiles: 'identified_only',
+        })
+    </script>
     <style>
         * {
             margin: 0;
@@ -280,17 +314,6 @@
             border: 2px solid transparent;
         }
 
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-        }
-
         .btn-email {
             background: var(--gradient);
             color: white;
@@ -475,25 +498,30 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- Navigation -->
-    <nav>
+    <nav class="site-nav" aria-label="Primary navigation">
         <div class="nav-container">
-            <div class="logo">ITALO.DEV</div>
-            <ul class="nav-links">
+            <a href="index.html" class="logo" aria-label="Italo.dev home">&lt;/&gt; italo.dev</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+                <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+            </button>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="cv.html">CV</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Contact Hero -->
-    <div class="contact-hero">
+    <div class="contact-hero" id="main-content">
         <h1>Let's Work Together</h1>
-        <p>Have a project in mind? Let's discuss how I can help bring your ideas to life with innovative no-code solutions.</p>
+        <p>Have a project in mind? Let's discuss how I can turn complex product, integration, and automation needs into a dependable system.</p>
     </div>
 
     <!-- Main Contact Section -->
@@ -511,20 +539,11 @@
                 </div>
 
                 <div class="contact-method-card">
-                    <div class="contact-icon">💬</div>
-                    <div class="contact-details">
-                        <h3>WhatsApp</h3>
-                        <p>Quick responses and real-time discussion</p>
-                        <a href="https://wa.me/5586999843969" target="_blank" class="contact-link-primary">+55 (86) 99984-3969</a>
-                    </div>
-                </div>
-
-                <div class="contact-method-card">
                     <div class="contact-icon">💼</div>
                     <div class="contact-details">
                         <h3>LinkedIn</h3>
                         <p>Professional network and updates</p>
-                        <a href="https://linkedin.com/in/italoengdev" target="_blank" class="contact-link-primary">@italoengdev</a>
+                        <a href="https://linkedin.com/in/italoengdev" target="_blank" rel="noopener noreferrer" class="contact-link-primary">@italoengdev</a>
                     </div>
                 </div>
 
@@ -533,7 +552,7 @@
                     <div class="contact-details">
                         <h3>GitHub</h3>
                         <p>Code repositories and projects</p>
-                        <a href="https://github.com/italoengdev" target="_blank" class="contact-link-primary">@italoengdev</a>
+                        <a href="https://github.com/italoengdev" target="_blank" rel="noopener noreferrer" class="contact-link-primary">@italoengdev</a>
                     </div>
                 </div>
             </div>
@@ -549,13 +568,9 @@
             <!-- Quick Contact Section -->
             <div class="quick-contact">
                 <h2>Let's Build Something Amazing</h2>
-                <p>I'm always interested in hearing about new projects and opportunities. Whether you need a complete Bubble.io application, API integrations, or consulting on your no-code strategy, I'm here to help.</p>
+                <p>I'm always interested in hearing about new projects and opportunities. Whether you need a full-stack web product, a Bubble.io application, API integrations, or workflow automation, I'm here to help.</p>
                 
                 <div class="cta-buttons">
-                    <a href="https://wa.me/5586999843969?text=Hi%20Italo,%20I'd%20like%20to%20discuss%20a%20project%20with%20you" target="_blank" class="btn-cta btn-whatsapp">
-                        <span>💬</span>
-                        <span>Chat on WhatsApp</span>
-                    </a>
                     <a href="mailto:italosaraiva182@gmail.com?subject=Project%20Inquiry" class="btn-cta btn-email">
                         <span>📧</span>
                         <span>Send an Email</span>
@@ -567,19 +582,16 @@
             <div class="social-section-centered">
                 <h3>Connect With Me</h3>
                 <div class="social-links">
-                    <a href="https://github.com/italoengdev" target="_blank" class="social-link" title="GitHub">
+                    <a href="https://github.com/italoengdev" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
                         <span>🔗</span>
                     </a>
-                    <a href="https://linkedin.com/in/italoengdev" target="_blank" class="social-link" title="LinkedIn">
+                    <a href="https://linkedin.com/in/italoengdev" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
                         <span>💼</span>
                     </a>
-                    <a href="https://wa.me/5586999843969" target="_blank" class="social-link" title="WhatsApp">
-                        <span>📱</span>
-                    </a>
-                    <a href="mailto:italosaraiva182@gmail.com" class="social-link" title="Email">
+                    <a href="mailto:italosaraiva182@gmail.com" class="social-link" title="Email" aria-label="Email">
                         <span>📧</span>
                     </a>
-                    <a href="https://meni.digital" target="_blank" class="social-link" title="Mení Digital">
+                    <a href="https://meni.digital" target="_blank" rel="noopener noreferrer" class="social-link" title="Mení Digital" aria-label="Mení Digital">
                         <span>🚀</span>
                     </a>
                 </div>
@@ -600,7 +612,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Italo Saraiva Gonçalves. All rights reserved.</p>
+        <p>&copy; <span data-current-year></span> Italo Saraiva Gonçalves. All rights reserved.</p>
     </footer>
+    <script src="assets/site.js" defer></script>
 </body>
 </html>

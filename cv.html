@@ -3,7 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Italo Saraiva Gonçalves</title>
+    <title>CV | Italo Saraiva Goncalves | Full-Stack Developer</title>
+    <meta name="description" content="Professional CV of Italo Saraiva Goncalves, an AI-assisted full-stack developer specializing in Laravel, Bubble.io, APIs, automation, and SaaS systems.">
+    <meta name="author" content="Italo Saraiva Goncalves">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#07111f">
+    <link rel="canonical" href="https://portfolio-italo-dev.vercel.app/cv.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Italo.dev">
+    <meta property="og:title" content="CV | Italo Saraiva Goncalves | Full-Stack Developer">
+    <meta property="og:description" content="Experience, education, and core skills of an AI-assisted full-stack developer.">
+    <meta property="og:url" content="https://portfolio-italo-dev.vercel.app/cv.html">
+    <meta property="og:image" content="https://portfolio-italo-dev.vercel.app/assets/hero-profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CV | Italo Saraiva Goncalves | Full-Stack Developer">
+    <meta name="twitter:description" content="Experience, education, and core skills of an AI-assisted full-stack developer.">
+    <meta name="twitter:image" content="https://portfolio-italo-dev.vercel.app/assets/hero-profile.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PNVL3VXGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1PNVL3VXGY');
+    </script>
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Sn Cn init Hn Un Gn Yi zn Kn qn capture Vn kn calculateEventProperties es register register_once register_for_session unregister unregister_for_session os Bn ss getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync ls identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset us shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty rs Xn createPersonProfile setInternalOrTestUser ns $n vs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Jn debug tr At getPageViewId captureTraceFeedback captureTraceMetric Ln".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_CRLUpFa5tiQEURL8CV9F3SaUQA2bE2EmhUQud4Ui5nYn', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2026-05-30',
+            person_profiles: 'identified_only',
+        })
+    </script>
     <style>
         * {
             margin: 0;
@@ -356,24 +390,111 @@
                 gap: 1rem;
             }
         }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            body {
+                padding-top: 0;
+                background: #ffffff;
+                color: #111827;
+                font-family: Arial, sans-serif;
+            }
+
+            nav,
+            .download-section,
+            .skip-link {
+                display: none !important;
+            }
+
+            .cv-container {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cv-header,
+            .cv-section {
+                margin-bottom: 12px;
+                padding: 16px;
+                border: 1px solid #d1d5db;
+                border-radius: 0;
+                background: #ffffff;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+
+            .cv-header::before,
+            .cv-section h2::after {
+                display: none;
+            }
+
+            .cv-header h1,
+            .cv-section h2,
+            .experience-title,
+            .education-degree,
+            .skill-category h3 {
+                background: none;
+                color: #111827;
+                -webkit-text-fill-color: initial;
+            }
+
+            .cv-header p,
+            .contact-item,
+            .summary,
+            .experience-description,
+            .experience-date,
+            .education-date,
+            .skill-list li {
+                color: #374151 !important;
+            }
+
+            .summary,
+            .experience-item,
+            .education-item,
+            .skill-category {
+                background: #f8fafc;
+                border-color: #d1d5db;
+                break-inside: avoid;
+            }
+
+            .contact-item a,
+            .education-school {
+                color: #1d4ed8 !important;
+            }
+
+            .language-item {
+                color: #111827;
+                background: #eef2ff;
+                border-color: #6366f1;
+            }
+        }
     </style>
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- Navigation -->
-    <nav>
+    <nav class="site-nav" aria-label="Primary navigation">
         <div class="nav-container">
-            <div class="logo">ITALO.DEV</div>
-            <ul class="nav-links">
+            <a href="index.html" class="logo" aria-label="Italo.dev home">&lt;/&gt; italo.dev</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+                <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+            </button>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="cv.html" class="active" aria-current="page">CV</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- CV Container -->
-    <div class="cv-container">
+    <div class="cv-container" id="main-content">
         <!-- Header -->
         <div class="cv-header">
             <h1>Italo Saraiva Gonçalves</h1>
@@ -383,13 +504,10 @@
                     📧 <a href="mailto:italosaraiva182@gmail.com">italosaraiva182@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    📱 <a href="https://wa.me/5586999843969">+55 (86) 99984-3969</a>
+                    🔗 <a href="https://github.com/italoengdev" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
                 <div class="contact-item">
-                    🔗 <a href="https://github.com/italoengdev" target="_blank">GitHub</a>
-                </div>
-                <div class="contact-item">
-                    💼 <a href="https://linkedin.com/in/italoengdev" target="_blank">LinkedIn</a>
+                    💼 <a href="https://linkedin.com/in/italoengdev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -581,5 +699,6 @@
             </div>
         </div>
     </div>
+    <script src="assets/site.js" defer></script>
 </body>
 </html>
