@@ -1,6 +1,6 @@
 # Italo.dev
 
-> Portfolio of Italo Saraiva Goncalves, an AI-assisted full-stack developer building production-ready web products, SaaS platforms, internal systems, API integrations, and workflow automation.
+> Portfolio of Italo Saraiva Goncalves, a full-stack developer building production-ready web products, SaaS platforms, internal systems, API integrations, and workflow automation.
 
 ## Primary pages
 
