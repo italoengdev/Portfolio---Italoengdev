@@ -275,6 +275,51 @@ body.project-page {
     font-weight: 700;
 }
 
+.project-status {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    max-width: 32rem;
+    margin: 1.25rem 0 0;
+    padding: 0.7rem 0.95rem;
+    border: 1px solid var(--project-line);
+    border-radius: 0.75rem;
+    background: rgba(15, 28, 46, 0.72);
+    color: var(--project-muted);
+    font-size: 0.92rem;
+}
+
+.project-status-dot {
+    flex: 0 0 auto;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.16);
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.project-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--project-line);
+    border-radius: 1rem;
+    background: var(--project-surface);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .project-next {
     display: flex;
     align-items: center;

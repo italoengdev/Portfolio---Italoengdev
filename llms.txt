@@ -1,36 +1,29 @@
 # Italo.dev
 
-> Portfolio of Italo Saraiva Goncalves, an AI-assisted full-stack developer focused on production-ready web products, SaaS platforms, internal systems, API integrations, and workflow automation.
+> Portfolio of Italo Saraiva Goncalves, an AI-assisted full-stack developer building production-ready web products, SaaS platforms, internal systems, API integrations, and workflow automation.
 
 ## Primary pages
 
 - [Home](https://portfolio-italo-dev.vercel.app/): Professional overview, capabilities, and selected work.
-- [Projects](https://portfolio-italo-dev.vercel.app/projects.html): Portfolio index with project case-study links.
+- [Projects](https://portfolio-italo-dev.vercel.app/projects.html): Case-study index grouped by product type.
 - [CV](https://portfolio-italo-dev.vercel.app/cv.html): Experience, education, skills, and downloadable resume.
-- [Contact](https://portfolio-italo-dev.vercel.app/contact.html): Professional contact options and social profiles.
+- [Contact](https://portfolio-italo-dev.vercel.app/contact.html): Contact options and social profiles.
 
-## Focus areas
+## Core skills
 
-- Laravel, Blade, PHP, JavaScript, SQL, and full-stack product development.
-- Bubble.io, FlutterFlow, n8n, API integrations, AI-assisted development, and workflow automation.
-- SaaS architecture, document workflows, responsive UI, web scraping, and operational tooling.
+- Front end: JavaScript, React, Next.js, responsive UI, Bubble.io, FlutterFlow.
+- Back end and data: PHP, Laravel, SQL, Supabase, database design, and authentication.
+- Mobile: React Native, Expo, FlutterFlow, and iOS/Android delivery.
+- Integrations: Stripe, Monday.com, Meta, LinkedIn, Twilio, Cloudinary, Outlook, WhatsApp, and LegiScan.
+- AI and automation: AI agents, AI content generation, chatbots, n8n, Make, Power Automate, and Microsoft Teams.
+- Product: SaaS architecture, internal tools, dashboards, document workflows, and web scraping.
 
-## Selected project pages
+## What I do
 
-- [NYC for Free](https://portfolio-italo-dev.vercel.app/projects/nyc-for-free.html): React Native, Expo, and Supabase mobile product.
-- [Bizaclia](https://portfolio-italo-dev.vercel.app/projects/bizaclia.html): AI agents, web scraping, n8n, and Bubble.io real estate workflows.
-- [Beehind the Scene](https://portfolio-italo-dev.vercel.app/projects/beehind-the-scene.html): Next.js and Supabase talent platform.
-- [The Attributes](https://portfolio-italo-dev.vercel.app/projects/the-attributes.html): Bubble.io assessment platform with AI chatbot and API integrations.
-- [Silverdash](https://portfolio-italo-dev.vercel.app/projects/silverdash.html): Monday.com-connected financial analytics platform.
-- [SDI](https://portfolio-italo-dev.vercel.app/projects/sdi.html): Power Automate, n8n, and Microsoft Teams workflows.
-- [Adult Hockey League](https://portfolio-italo-dev.vercel.app/projects/adult-hockey-league.html): Bubble.io league management and Stripe payment workflows.
-- [NamTab](https://portfolio-italo-dev.vercel.app/projects/namtab.html): AI-powered business process and data management platform.
-- [Meni Digital](https://portfolio-italo-dev.vercel.app/projects/meni-digital.html): Food service customer experience platform.
-- [BusQme](https://portfolio-italo-dev.vercel.app/projects/busqme.html): Service marketplace with booking, availability, payments, and reviews.
-- [PetConnect MVP](https://portfolio-italo-dev.vercel.app/projects/petconnect.html): FlutterFlow and Firebase pet services marketplace.
-- [OneStepAfter](https://portfolio-italo-dev.vercel.app/projects/onestepafter.html): Goal, habit, progress, and community platform.
-- [GrantChamps](https://portfolio-italo-dev.vercel.app/projects/grantchamps.html): Grant management SaaS with document workflows.
-- [HiVaulted](https://portfolio-italo-dev.vercel.app/projects/hivaulted.html): AI social media content platform with Meta, LinkedIn, Twilio, Cloudinary, Stripe, Outlook, and additional integrations.
+- Build production-ready web apps, SaaS platforms, and internal systems.
+- Connect third-party APIs and automate operational workflows.
+- Ship mobile products for iOS and Android.
+- Apply AI-assisted development with human review and clear technical decisions.
 
 ## Professional profiles
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Italo.dev | Product and Automation Case Studies</title>
@@ -222,6 +223,13 @@
             border-radius: 2px;
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto 3rem;
+        }
+
         /* Filter Buttons */
         .filter-buttons {
             display: flex;
@@ -268,7 +276,6 @@
             overflow: hidden;
             transition: all 0.3s;
             position: relative;
-            animation: fadeInUp 0.6s ease-out;
         }
 
         @keyframes fadeInUp {
@@ -452,7 +459,7 @@
     <div class="stats">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">14</div>
+                <div class="stat-number">18</div>
                 <div class="stat-label">Selected case studies</div>
             </div>
             <div class="stat-item">
@@ -480,17 +487,16 @@
                 <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All work</button>
                 <button class="filter-btn" type="button" data-filter="saas" aria-pressed="false">SaaS</button>
                 <button class="filter-btn" type="button" data-filter="platform" aria-pressed="false">Platforms</button>
-                <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
                 <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI &amp; automation</button>
             </div>
             
             <!-- Projects Grid -->
-            <div class="projects-grid">
+            <div class="projects-grid" id="featured-work-grid">
                 <!-- Project: NamTab -->
                 <div class="project-card" data-category="ai">
                     <span class="featured-badge">New</span>
                     <div class="project-image">
-                        <img src="https://namtab.io/wp-content/uploads/2024/09/Logo-NAMTAB-Oficial-300x90.png" alt="NamTab logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
+                        <img src="assets/namtab-logo.webp" alt="NamTab logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">NamTab</h3>
@@ -511,15 +517,15 @@
 
                 <!-- Project 1: Meni Digital -->
                 <div class="project-card" data-category="platform">
-                    <span class="featured-badge">Co-Founded</span>
+                    <span class="featured-badge">Archived</span>
                     <div class="project-image">
-                        <img src="assets/meni-logo.svg" alt="Meni Digital logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
+                        <img src="assets/meni-logo.png" alt="Meni Digital logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Meni Digital</h3>
                         <p class="project-company">Digital Agency Platform</p>
                         <p class="project-description">
-                            Ex-partner in this startup: a system for customer service in food establishments, helping to increase table turnover and boost marketing results.
+                            Ex-partner in this startup: a system for customer service in food establishments, helping to increase table turnover and boost marketing results. No longer live.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Bubble.io</span>
@@ -549,29 +555,6 @@
                             <span class="tech-tag">Database Design</span>
                         </div>
                         <a href="projects/busqme.html" class="project-link">
-                            Read case study →
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5: PetConnect -->
-                <div class="project-card" data-category="mobile">
-                    <span class="featured-badge">Mobile</span>
-                    <div class="project-image">
-                        <img src="https://b958627177f1d8330169916034dbdaa1.cdn.bubble.io/cdn-cgi/image/w=384,h=246,f=auto,dpr=1,fit=contain/f1728496112710x917478375898301400/logo.png" alt="PetConnect logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">PetConnect MVP</h3>
-                        <p class="project-company">Pet Services App</p>
-                        <p class="project-description">
-                            Built mobile-first MVP for pet services marketplace using FlutterFlow, featuring real-time booking, location services, and in-app messaging.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">FlutterFlow</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Mobile Design</span>
-                        </div>
-                        <a href="projects/petconnect.html" class="project-link">
                             Read case study →
                         </a>
                     </div>
@@ -646,12 +629,6 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="mobile">
-                    <span class="featured-badge">Mobile</span>
-                    <div class="project-image"><img src="https://play-lh.googleusercontent.com/ZeBXMxBiRa5xM4VLKQcXSmkweyvuBfFGjO0HeIyF33D_0UhvDvJ_7PNhxpQv7T3VmtxZuxO-o-qTagaef7SdHig=w240-h480-rw" alt="NYC for Free app preview" loading="lazy" decoding="async"></div>
-                    <div class="project-content"><h3 class="project-title">NYC for Free</h3><p class="project-company">Mobile App</p><p class="project-description">Mobile product built with Expo, React Native, and Supabase for events, guides, and discounts in New York City.</p><div class="project-tech"><span class="tech-tag">React Native</span><span class="tech-tag">Expo</span><span class="tech-tag">Supabase</span></div><a href="projects/nyc-for-free.html" class="project-link">Read case study &rarr;</a></div>
-                </div>
-
                 <div class="project-card" data-category="ai">
                     <span class="featured-badge">AI Agents</span>
                     <div class="project-image"><img src="https://bizaclia.com/assets/bizaclia-logo-DBO3cvQ7.svg" alt="Bizaclia logo" loading="lazy" decoding="async"></div>
@@ -688,9 +665,165 @@
         </div>
     </div>
 
+    <!-- Additional Work: Mobile Apps -->
+    <div class="projects" id="mobile-apps" style="background: var(--bg-dark);">
+        <div class="projects-container">
+            <h2 class="section-title">Mobile Apps</h2>
+            <p class="section-subtitle">Companion and utility apps shipped to the App Store and Google Play.</p>
+            <div class="projects-grid">
+                <!-- Ask Marty -->
+                <div class="project-card">
+                    <span class="featured-badge">New</span>
+                    <div class="project-image">
+                        <img src="assets/ask-marty-icon.png" alt="Ask Marty app icon" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ask Marty</h3>
+                        <p class="project-company">Senior AI Companion App</p>
+                        <p class="project-description">
+                            An AI companion for older adults with daily conversation, brain quizzes, gentle reminders, and a family dashboard.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">iOS &amp; Android</span>
+                            <span class="tech-tag">Anthropic Claude</span>
+                        </div>
+                        <a href="projects/ask-marty.html" class="project-link">
+                            Read case study →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Montani -->
+                <div class="project-card">
+                    <span class="featured-badge">Live</span>
+                    <div class="project-image">
+                        <img src="assets/montani-logo.png" alt="Montani logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%; padding: 0 2rem;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Montani</h3>
+                        <p class="project-company">Legislative Tracker App</p>
+                        <p class="project-description">
+                            Mobile app for following West Virginia legislation — bills, committees, legislators, and topics in one personal tracker.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">iOS &amp; Android</span>
+                            <span class="tech-tag">LegiScan data</span>
+                            <span class="tech-tag">Push updates</span>
+                        </div>
+                        <a href="projects/montani.html" class="project-link">
+                            Read case study →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NYC for Free -->
+                <div class="project-card">
+                    <span class="featured-badge">Live</span>
+                    <div class="project-image">
+                        <img src="https://play-lh.googleusercontent.com/ZeBXMxBiRa5xM4VLKQcXSmkweyvuBfFGjO0HeIyF33D_0UhvDvJ_7PNhxpQv7T3VmtxZuxO-o-qTagaef7SdHig=w240-h480-rw" alt="NYC for Free app preview" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">NYC for Free</h3>
+                        <p class="project-company">Mobile App</p>
+                        <p class="project-description">
+                            Mobile product built with Expo, React Native, and Supabase for events, guides, and discounts in New York City.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Expo</span>
+                            <span class="tech-tag">Supabase</span>
+                        </div>
+                        <a href="projects/nyc-for-free.html" class="project-link">
+                            Read case study →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Work: Web Platforms -->
+    <div class="projects" id="web-platforms">
+        <div class="projects-container">
+            <h2 class="section-title">Web Platforms</h2>
+            <p class="section-subtitle">Web products and operational systems built for real businesses.</p>
+            <div class="projects-grid">
+                <!-- Delta Million Miler -->
+                <div class="project-card">
+                    <span class="featured-badge">Web</span>
+                    <div class="project-image">
+                        <img src="https://deltamillionmiler.com/brand/million-miler-logo-white.png" alt="Delta Million Miler logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Delta Million Miler</h3>
+                        <p class="project-company">Loyalty Status Platform</p>
+                        <p class="project-description">
+                            Web platform for Delta SkyMiles members to track Million Miler progress and status, with a secure code-based sign-in.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Web App</span>
+                            <span class="tech-tag">Email-code auth</span>
+                            <span class="tech-tag">Delta SkyMiles</span>
+                        </div>
+                        <a href="projects/delta-million-miler.html" class="project-link">
+                            Read case study →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- WOMA CRM -->
+                <div class="project-card">
+                    <span class="featured-badge">CRM</span>
+                    <div class="project-image">
+                        <img src="assets/woma-crm-logo.svg" alt="WOMA CRM logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">WOMA CRM</h3>
+                        <p class="project-company">Sales CRM for Woox</p>
+                        <p class="project-description">
+                            Sales CRM built for Woox, a Mexican paint manufacturer, centralizing customer context, sales, and operations in one system.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">CRM</span>
+                            <span class="tech-tag">Sales pipeline</span>
+                            <span class="tech-tag">Next.js</span>
+                        </div>
+                        <a href="projects/woma-crm.html" class="project-link">
+                            Read case study →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Genial -->
+                <div class="project-card">
+                    <span class="featured-badge">New</span>
+                    <div class="project-image">
+                        <img src="assets/genial-logo.svg" alt="Genial logo" loading="lazy" decoding="async" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Genial</h3>
+                        <p class="project-company">AI Content Platform</p>
+                        <p class="project-description">
+                            AI content platform that turns WhatsApp audio or text ideas into ready-to-schedule posts for social media.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AI agents</span>
+                            <span class="tech-tag">WhatsApp API</span>
+                            <span class="tech-tag">Bubble.io</span>
+                        </div>
+                        <a href="projects/genial.html" class="project-link">
+                            Read case study →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+        const projectCards = document.querySelectorAll('#featured-work-grid .project-card');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -707,19 +840,6 @@
                     card.classList.toggle('is-hidden', !matches);
                 });
             });
-        });
-
-        // Add animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s ease-out';
-                }
-            });
-        });
-
-        document.querySelectorAll('.project-card').forEach(card => {
-            observer.observe(card);
         });
     </script>
     <script src="assets/site.js" defer></script>

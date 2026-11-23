@@ -285,6 +285,295 @@ img {
     }
 }
 
+/* ==========================================================================
+   Motion & visual polish layer
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    background: var(--gradient);
+    box-shadow: 0 0 18px rgba(103, 232, 249, 0.55);
+    z-index: 3000;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Back to top */
+#back-to-top {
+    position: fixed;
+    right: clamp(0.9rem, 3vw, 1.5rem);
+    bottom: clamp(0.9rem, 3vw, 1.5rem);
+    z-index: 1500;
+    display: grid;
+    place-items: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border: 1px solid var(--site-line);
+    border-radius: 50%;
+    background: rgba(15, 28, 46, 0.9);
+    color: var(--site-accent);
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+#back-to-top:hover {
+    border-color: var(--site-accent);
+    box-shadow: 0 12px 34px rgba(103, 232, 249, 0.28);
+}
+
+#back-to-top svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Navigation states */
+.site-nav,
+.project-site-header {
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.site-nav.is-scrolled,
+.project-site-header.is-scrolled {
+    background: rgba(7, 17, 31, 0.92);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+    border-bottom-color: rgba(103, 232, 249, 0.18);
+}
+
+.site-nav .nav-links a:not(.btn-nav) {
+    position: relative;
+}
+
+.site-nav .nav-links a:not(.btn-nav)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -0.35rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gradient);
+    transition: right 0.28s ease;
+}
+
+.site-nav .nav-links a:not(.btn-nav):hover::after,
+.site-nav .nav-links a:not(.btn-nav):focus-visible::after,
+.site-nav .nav-links a:not(.btn-nav).active::after {
+    right: 0;
+}
+
+/* Ambient glow background */
+body:not(.project-page) {
+    background-color: var(--site-ink);
+    background-image:
+        radial-gradient(46rem 46rem at 12% -8%, rgba(103, 232, 249, 0.10), transparent 62%),
+        radial-gradient(42rem 42rem at 100% 6%, rgba(129, 140, 248, 0.13), transparent 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.project-page {
+    background-image:
+        radial-gradient(44rem 44rem at 88% -6%, rgba(129, 140, 248, 0.16), transparent 60%),
+        radial-gradient(40rem 40rem at 4% 42%, rgba(103, 232, 249, 0.08), transparent 62%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Scroll reveal */
+html.js .hero-left > *,
+html.js .project-hero > div,
+html.js .project-copy > section,
+html.js :is(
+    .hero-image-wrap,
+    .capabilities-heading,
+    .capability-card,
+    .stat-item,
+    .section-label,
+    .section-title,
+    .section-desc,
+    .project-card,
+    .cv-section,
+    .experience-item,
+    .skill-category,
+    .education-item,
+    .language-item,
+    .contact-method-card,
+    .social-link,
+    .quick-contact,
+    .map-section,
+    .project-hero-card,
+    .project-next
+) {
+    opacity: 0;
+    translate: 0 30px;
+}
+
+html.js .hero-left > .is-visible,
+html.js .project-hero > div.is-visible,
+html.js .project-copy > section.is-visible,
+html.js :is(
+    .hero-image-wrap,
+    .capabilities-heading,
+    .capability-card,
+    .stat-item,
+    .section-label,
+    .section-title,
+    .section-desc,
+    .project-card,
+    .cv-section,
+    .experience-item,
+    .skill-category,
+    .education-item,
+    .language-item,
+    .contact-method-card,
+    .social-link,
+    .quick-contact,
+    .map-section,
+    .project-hero-card,
+    .project-next
+).is-visible {
+    animation: revealUp 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        translate: 0 30px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* Card hover polish */
+.project-card,
+.capability-card,
+.stat-item,
+.contact-method-card,
+.cv-section,
+.experience-item {
+    transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.project-card:hover,
+.capability-card:hover,
+.contact-method-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(103, 232, 249, 0.35);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(103, 232, 249, 0.12);
+}
+
+.project-card-image img,
+.project-image img {
+    transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.project-card:hover .project-card-image img,
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+.experience-item:hover {
+    transform: translateX(5px);
+}
+
+/* Button glow */
+.btn-primary,
+.btn-nav,
+.download-btn,
+.btn-email,
+.project-button-primary {
+    box-shadow: 0 10px 28px rgba(103, 232, 249, 0.22);
+}
+
+.btn-primary:hover,
+.btn-nav:hover,
+.download-btn:hover,
+.btn-email:hover,
+.project-button-primary:hover {
+    box-shadow: 0 16px 38px rgba(103, 232, 249, 0.35);
+}
+
+/* Animated gradient hero name */
+.hero h1 .accent {
+    background: var(--gradient);
+    background-size: 220% 220%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 7s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Hero image glow + floating badge */
+.hero-image {
+    animation: heroGlow 7s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+    0%,
+    100% {
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    50% {
+        box-shadow: 0 28px 74px rgba(103, 232, 249, 0.35);
+    }
+}
+
+.open-to-work {
+    animation: floatY 5.5s ease-in-out infinite;
+}
+
+@keyframes floatY {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* Tool logos micro-interaction */
+.hero-tools-list a {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hero-tools-list a:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -297,4 +586,44 @@ img {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* ==========================================================================
+   Hero tech stack — uniform chips
+   ========================================================================== */
+
+.hero-tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.hero-tools-list a,
+.hero-tools-list span {
+    display: grid;
+    place-items: center;
+    height: 3rem;
+    min-width: 3rem;
+    padding: 0 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0.85rem;
+    background: linear-gradient(150deg, #ffffff, #e6ecf5);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-tools-list a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(103, 232, 249, 0.9);
+    box-shadow: 0 16px 32px rgba(103, 232, 249, 0.3);
+}
+
+.hero-tools-list img,
+.hero-tools-list img.hero-tool-dark {
+    height: 1.3rem;
+    width: auto;
+    max-width: 6rem;
+    object-fit: contain;
+    filter: none;
 }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 110" role="img" aria-label="Genial">
+    <g fill="none" stroke="#ec4899" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M62 90c-17 0-30-13-30-30 0-4 1-8 3-12-4-4-6-9-6-14C29 19 40 8 54 8c6 0 12 2 16 6 4-4 10-6 16-6 14 0 25 11 25 26 0 5-2 10-6 14 2 4 3 8 3 12 0 17-13 30-30 30-4 0-8-1-11-3-2 2-6 3-9 3z"/>
+        <path d="M70 14v70"/>
+        <path d="M54 32c7 0 12 5 12 12"/>
+        <path d="M54 66c7 0 12-5 12-12"/>
+        <path d="M86 32c-7 0-12 5-12 12"/>
+        <path d="M86 66c-7 0-12-5-12-12"/>
+    </g>
+    <g fill="#ec4899">
+        <circle cx="47" cy="36" r="4.5"/>
+        <circle cx="45" cy="64" r="4.5"/>
+        <circle cx="93" cy="36" r="4.5"/>
+        <circle cx="95" cy="64" r="4.5"/>
+    </g>
+    <text x="150" y="76" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="58" font-weight="800" fill="#f5f7fb" letter-spacing="-1">Genial</text>
+</svg>
